@@ -27,7 +27,7 @@ public class Oblig1 {
         for (int i = 0; i< array.length; i++) {
             System.out.println(array[i]);
         }
-
+         
         return array[array.length -1];
 
         /*Spørsmål til oppgaven
