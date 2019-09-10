@@ -3,7 +3,12 @@ import java.util.Random;
 
 public class Oblig1 {
 
-    public static int maks (int[] array) {
+
+    //************************************************
+    //Oppgave 1
+    //************************************************
+
+     public static int maks (int[] array) {
 
         /* Skal teste om lengden er 0
 
@@ -27,7 +32,7 @@ public class Oblig1 {
         for (int i = 0; i< array.length; i++) {
             System.out.println(array[i]);
         }
-         
+
         return array[array.length -1];
 
         /*Spørsmål til oppgaven
@@ -64,6 +69,35 @@ public class Oblig1 {
     }
 
     //***********************************************************
+    //Oppgave 3
+    //***********************************************************
+
+    public static int antallUlikeUsortert (int[] array) {
+         if (array.length == 0) {
+             return 0;
+         } else {
+
+             int antallUnikeTall = array.length;
+             int counter = 0;
+
+             for (int i = 0; i < array.length; i++) {
+
+                 for (int j = array.length - 1; j > i; j--) {
+
+                     if (array[i] == array[j]) {
+                         counter++;
+                     }
+                 }
+                 antallUnikeTall = antallUnikeTall - counter;
+                 counter = 0;
+             }
+
+            return antallUnikeTall;
+         }
+    }
+
+
+    //***********************************************************
     //Hjelpemetoder fra kompendiet
     //***********************************************************
     public static int[] randPerm(int n)  // en effektiv versjon
@@ -83,6 +117,8 @@ public class Oblig1 {
     }
     public static void bytt(int[] a, int i, int j)
     {
-        int temp = a[i]; a[i] = a[j]; a[j] = temp;
+        int temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
     }
 }
