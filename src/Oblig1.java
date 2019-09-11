@@ -96,6 +96,54 @@ public class Oblig1 {
          }
     }
 
+    //***********************************************************
+    //Oppgave 4
+    //***********************************************************
+
+    public static void delSortering(Integer arr[], int n) {
+        // index
+        int l = 0, r = n - 1;
+
+        //k er antall oddetall
+        int k = 0;
+
+        while (l < r) {
+
+            while (arr[l] % 2 != 0) {
+                l++;
+                k++;
+            }
+
+            while (arr[r] % 2 == 0 && l < r)
+                r--;
+
+            if (l < r) {
+                int x = arr[l];
+                arr[l] = arr[r];
+                arr[r] = x;
+            }
+        }
+
+        int p = arr.length;
+
+        for (int i = 0; i < k-1; i++)
+            for (int j = 0; j < k - i - 1; j++)
+                if (arr[j] > arr[j + 1]) {
+
+                    int t = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = t;
+                }
+
+        for (int m = k; m < p-1; m++)
+            if (arr[m] > arr[m+1])
+            {
+                int midlertidig = arr[m];
+                arr[m] = arr[m+1];
+                arr[m+1] = midlertidig;
+            }
+
+    }
 
     //***********************************************************
     //Hjelpemetoder fra kompendiet
