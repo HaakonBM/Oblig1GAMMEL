@@ -42,4 +42,27 @@ public class Oblig1Test {
 
         System.out.println("Antall unike tall i tabell to: " + antall);
     }
+
+
+    @Test
+    void delSortering(){
+        Integer[] arr = {-3,4,9,5,2,8,-5,1,10 };
+
+        delSortering(arr);
+
+        System.out.println(Arrays.toString(arr));
+    }
+
+
+    @Test
+    void rotasjon(){
+        char[] charArray = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'};
+        char[] charArrayEmpty = new char[0];
+        char[] charArrayOne = {'a'};
+
+        Rotasjon.rotasjon(charArray);
+        System.out.println(Arrays.toString(charArray));
+
+    }
+
 }

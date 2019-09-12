@@ -100,15 +100,14 @@ public class Oblig1 {
     //Oppgave 4
     //***********************************************************
 
-    public static void delSortering(Integer arr[], int n) {
-        // index
-        int l = 0, r = n - 1;
+    public static void delSortering(Integer arr[]) {
 
-        //k er antall oddetall
+        int n = arr.length;
+
+        int l = 0, r = n - 1;
         int k = 0;
 
         while (l < r) {
-
             while (arr[l] % 2 != 0) {
                 l++;
                 k++;
@@ -142,7 +141,30 @@ public class Oblig1 {
                 arr[m] = arr[m+1];
                 arr[m+1] = midlertidig;
             }
+    }
 
+    //***********************************************************
+    //Oppgave 5
+    //***********************************************************
+
+    public static void rotasjon(char[] a) {
+        if (a.length != 0){
+
+            char[] arr = a;
+            int n = 1;
+
+            for (int i = 0; i < n; i++) {
+                int j;
+                Character last;
+                last = arr[arr.length - 1];
+
+                for (j = arr.length - 1; j > 0; j--) {
+                    arr[j] = arr[j - 1];
+                }
+                arr[0] = last;
+
+            }
+        }
     }
 
     //***********************************************************
